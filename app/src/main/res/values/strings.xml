@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">JuggleTips</string>
+
+    <string-array name="titles">
+        <item>3-ball skills</item>
+        <item>4-ball skills</item>
+        <item>5-ball skills</item>
+    </string-array>
 </resources>
