@@ -1,6 +1,8 @@
 package me.ryanfinlayson.juggletips;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -9,7 +11,9 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ShareActionProvider;
@@ -32,8 +36,42 @@ public class MainActivity extends Activity {
                 this,
                 android.R.layout.simple_list_item_activated_1,
                 titles));
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerList.setOnItemClickListener(new DrawerItemClickListener());
 
+
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener{
+
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+            //code executes when ListView item is clicked
+            selectItem(position);
+
+        }
+    }
+
+    private void selectItem(int position){
+        Fragment fragment;
+        switch (position){
+            case 1:
+                fragment = new ThreeBallCategoryFrag();
+                break;
+            case 2:
+                fragment = new FourBallCategoryFrag();
+                break;
+            case 3:
+                fragment = new FiveBallListFrag();
+                break;
+            default:
+                fragment = new TopFragment();
+        }
+
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.content_frame, fragment);
+        ft.addToBackStack(null);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
     }
 
     @Override

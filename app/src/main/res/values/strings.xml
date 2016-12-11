@@ -2,6 +2,7 @@
     <string name="app_name">JuggleTips</string>
 
     <string-array name="titles">
+        <item>Home</item>
         <item>3-ball skills</item>
         <item>4-ball skills</item>
         <item>5-ball skills</item>
@@ -9,4 +10,10 @@
 
     <string name="action_share">Share</string>
     <string name="about_us">About Us</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="welcome_juggletips">Welcome To Juggle Tips!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
