@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#560e1c</color>
     <color name="colorAccent">#a71959</color>
     <color name="actionBarTextColor">#fff</color>
-    <color name="background_color">#ffffee</color>
+    <color name="background_color">#ffffff</color>
     <color name="navigationBarColor">#6b213e</color>
 </resources>
