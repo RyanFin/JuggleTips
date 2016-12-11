@@ -53,4 +53,15 @@ public class MainActivity extends Activity {
         shareActionProvider.setShareIntent(i);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.about_us:
+                //create an intent which will go to about us page
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
 }

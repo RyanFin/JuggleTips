@@ -12,8 +12,16 @@
         <item name="android:textColorPrimary">@color/actionBarTextColor</item>
         <item name="android:windowBackground">@color/background_color</item>
         <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
-        <item name="android:itemBackground">@color/overflow_menu_background_colour</item>
 
+        <!--OverFlow menu background colour-->
+        <item name="android:itemBackground">@color/overflow_menu_background_colour</item>
+        <!--Share action provider menu background change code -->
+        <item name="android:listPopupWindowStyle">@style/MyListPopupWindowStyle</item>
+    </style>
+
+    <style name="MyListPopupWindowStyle" parent="android:Widget.Material.Light.ListPopupWindow">
+        <!--Share action provider menu background colour -->
+        <item name="android:popupBackground">@color/share_action_background_colour</item>
 
     </style>
 

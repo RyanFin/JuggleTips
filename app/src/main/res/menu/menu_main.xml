@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
 
     <item
         android:id="@+id/action_share"
         android:title="@string/action_share"
         android:orderInCategory="2"
-        app:showAsAction="ifRoom"
+        android:showAsAction="ifRoom"
         android:actionProviderClass="android.widget.ShareActionProvider"
         />
 
@@ -14,6 +16,6 @@
         android:id="@+id/about_us"
         android:title="@string/about_us"
         android:orderInCategory="1"
-        app:showAsAction="never" />
+        android:showAsAction="never" />
 
 </menu>
