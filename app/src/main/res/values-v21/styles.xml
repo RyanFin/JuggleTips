@@ -12,7 +12,10 @@
         <item name="android:textColorPrimary">@color/actionBarTextColor</item>
         <item name="android:windowBackground">@color/background_color</item>
         <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <item name="android:itemBackground">@color/overflow_menu_background_colour</item>
+
 
     </style>
+
 
 </resources>

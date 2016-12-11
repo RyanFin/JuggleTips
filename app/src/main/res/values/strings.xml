@@ -6,4 +6,7 @@
         <item>4-ball skills</item>
         <item>5-ball skills</item>
     </string-array>
+
+    <string name="action_share">Share</string>
+    <string name="about_us">About Us</string>
 </resources>

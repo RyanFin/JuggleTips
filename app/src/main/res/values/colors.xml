@@ -6,4 +6,5 @@
     <color name="actionBarTextColor">#fff</color>
     <color name="background_color">#ffffff</color>
     <color name="navigationBarColor">#6b213e</color>
+    <color name="overflow_menu_background_colour">#645c5c</color>
 </resources>
