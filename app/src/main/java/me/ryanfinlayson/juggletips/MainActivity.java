@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,16 +24,18 @@ public class MainActivity extends Activity {
 
     private String[] titles;
     private ListView drawerList;
+    private  DrawerLayout drawerLayout;
 
     private ShareActionProvider shareActionProvider;
+    private ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+        //initialise drawerLayout
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         titles = getResources().getStringArray(R.array.titles);
         drawerList = (ListView) findViewById(R.id.drawer);
         drawerList.setAdapter(new ArrayAdapter<String>(
@@ -40,7 +44,33 @@ public class MainActivity extends Activity {
                 titles));
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
 
+        //create the ActionBarDrawerToggle
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.Open_drawer, R.string.Close_drawer){
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                invalidateOptionsMenu();
+            }
 
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+            }
+        };
+        drawerLayout.addDrawerListener(drawerToggle);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+
+
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        //if drawer is open close action bar items
+        boolean drawerOpen = drawerLayout.isDrawerOpen(drawerList);
+        menu.findItem(R.id.action_share).setVisible(!drawerOpen);
+        return super.onPrepareOptionsMenu(menu);
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener{
@@ -79,7 +109,7 @@ public class MainActivity extends Activity {
         setActionBarTitle(position);
 
         //closing the navigation drawer
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         drawerLayout.closeDrawer(drawerList);
 
     }
@@ -113,6 +143,12 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        //actionBarDrawerToggle can handle being clicked
+        if(drawerToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
         switch (item.getItemId()){
             case R.id.about_us:
                 //create an intent which will go to about us page
@@ -121,5 +157,17 @@ public class MainActivity extends Activity {
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        drawerToggle.onConfigurationChanged(newConfig);
     }
 }

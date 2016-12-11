@@ -7,7 +7,9 @@
         <item>4-Ball Skills</item>
         <item>5-Ball Skills</item>
     </string-array>
-    
+
+    <string name="Open_drawer">Open drawer</string>
+    <string name="Close_drawer">Close drawer</string>
 
     <string-array name="three_ball_tricks">
         <item>Three Ball Cascade</item>

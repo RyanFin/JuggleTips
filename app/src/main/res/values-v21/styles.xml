@@ -12,6 +12,10 @@
         <item name="android:textColorPrimary">@color/actionBarTextColor</item>
         <item name="android:windowBackground">@color/background_color</item>
         <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <!--  Hamburger colour change-->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+
 
         <!--OverFlow menu background colour-->
         <item name="android:itemBackground">@color/overflow_menu_background_colour</item>
@@ -23,6 +27,11 @@
         <!--Share action provider menu background colour -->
         <item name="android:popupBackground">@color/share_action_background_colour</item>
 
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/actionBarTextColor</item>
     </style>
 
 
