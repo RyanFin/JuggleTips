@@ -8,6 +8,18 @@
         <item>5-ball skills</item>
     </string-array>
 
+    <string-array name="three_ball_tricks">
+        <item>Three Ball Cascade</item>
+    </string-array>
+
+    <string-array name="four_ball_tricks">
+        <item>Four Ball Cascade</item>
+    </string-array>
+
+    <string-array name="five_ball_tricks">
+        <item>Five Ball Cascade</item>
+    </string-array>
+
     <string name="action_share">Share</string>
     <string name="about_us">About Us</string>
 
