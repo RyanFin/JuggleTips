@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //display
+
 
         titles = getResources().getStringArray(R.array.titles);
         drawerList = (ListView) findViewById(R.id.drawer);
@@ -74,6 +74,24 @@ public class MainActivity extends Activity {
         ft.addToBackStack(null);
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
+
+        //change actionBar title
+        setActionBarTitle(position);
+
+        //closing the navigation drawer
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.closeDrawer(drawerList);
+
+    }
+
+    private void setActionBarTitle(int position){
+        String title;
+        if(position == 0){
+            title = getResources().getString(R.string.app_name);
+        } else{
+            title = titles[position];
+        }
+        getActionBar().setTitle(title);
     }
 
     @Override

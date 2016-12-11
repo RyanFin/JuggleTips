@@ -3,10 +3,11 @@
 
     <string-array name="titles">
         <item>Home</item>
-        <item>3-ball skills</item>
-        <item>4-ball skills</item>
-        <item>5-ball skills</item>
+        <item>3-Ball Skills</item>
+        <item>4-Ball Skills</item>
+        <item>5-Ball Skills</item>
     </string-array>
+    
 
     <string-array name="three_ball_tricks">
         <item>Three Ball Cascade</item>

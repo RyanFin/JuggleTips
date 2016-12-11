@@ -28,7 +28,7 @@ public class ThreeBallCategoryFrag extends ListFragment {
         ListView  listView= getListView();
         //change background colour
         listView.setBackgroundColor(Color.parseColor("#efd79b"));
-        
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
