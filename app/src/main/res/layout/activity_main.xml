@@ -19,7 +19,7 @@
         android:layout_gravity="start"
         android:choiceMode="singleChoice"
         android:dividerHeight="0dp"
-        android:background="#fff"></ListView>
+        android:background="#645c5c"></ListView>
 
 
 </android.support.v4.widget.DrawerLayout>
