@@ -34,6 +34,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //start the fragment transation to display the top fragment
+        Fragment topFrag = new TopFragment();
+        FragmentTransaction startingFrag = getFragmentManager().beginTransaction();
+        startingFrag.replace(R.id.content_frame, topFrag);
+        startingFrag.addToBackStack(null);
+        startingFrag.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        startingFrag.commit();
+
         //initialise drawerLayout
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         titles = getResources().getStringArray(R.array.titles);
